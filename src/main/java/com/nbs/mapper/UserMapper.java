@@ -10,5 +10,13 @@ import com.nbs.pojo.User;
 public interface UserMapper {
 	
 	public List<User> findAll();
+	
+	void insertUser(User user);
+	
+	User selectUserById(Integer id);
+	
+	void updateUser(User user);
+	
+	void deleteUserById(Integer id);
 
 }
