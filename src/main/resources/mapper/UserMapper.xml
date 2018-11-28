@@ -4,5 +4,16 @@
 	<select id="findAll" resultType="com.nbs.pojo.User" >
 		select * from t_users
 	</select>
-
+	<insert id="insertUser" parameterType="com.nbs.pojo.User">
+		insert into t_users(name, age, address) values(#{name}, #{age}, #{address})
+	</insert>
+	<select id="selectUserById" resultType="com.nbs.pojo.User">
+		select id,name,age,address from t_users where id = #{value}
+	</select>
+	<update id="updateUser" parameterType="com.nbs.pojo.User">
+		update t_users set name=#{name}, age=#{age}, address=#{address} where id=#{id}
+	</update>
+	<delete id="deleteUserById">
+		delete from t_users where id = #{value}
+	</delete>
 </mapper>
